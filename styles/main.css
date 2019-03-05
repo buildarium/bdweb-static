@@ -1,0 +1,58 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+::selection {
+  background: white; /* WebKit/Blink Browsers */
+  color: black;
+}
+::-moz-selection {
+  background: white; /* Gecko Browsers */
+  color: black;
+}
+
+h1, h2, h3, h4 {
+  color: #FFF829;
+}
+
+.tidbit {
+  text-align: right;
+}
+
+a {
+  color: white;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+object:hover {
+  animation-name: ckw;
+  animation-duration: 5s;
+}
+
+@keyframes ckw {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+#launch {
+  color: #FFF829;
+}
+
+#launch:hover {
+  color: black;
+  background-color: #FFF829;
+}
+
+a:hover {
+  color: black;
+  background-color: white;
+}

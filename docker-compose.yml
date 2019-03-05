@@ -1,0 +1,11 @@
+version: '3'
+services:
+  bdapi-auth:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - './:/usr/share/nginx/html'
+    ports:
+      - "8080:80"
+
