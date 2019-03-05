@@ -29,6 +29,29 @@ a {
   text-decoration: none;
 }
 
+.right {
+  text-align: right;
+}
+
+.middle {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.thumbnail {
+  vertical-align: middle
+}
+
 object:hover {
   animation-name: ckw;
   animation-duration: 5s;
