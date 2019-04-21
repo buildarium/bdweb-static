@@ -223,6 +223,8 @@ To prepare for the Staging Ecosystem, it is a good idea to:
 
 ### Production Ecosystem
 
+`az storage blob upload-batch -s . -d \$web --account-name buildarium`
+
 Deployment to Production is triggered manually from the container registered from the `master` branch upon proper QA testing and when the time is right.
 
 Don't fuck up.
