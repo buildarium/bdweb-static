@@ -1,11 +1,11 @@
 version: '3'
 services:
-  bdapi-auth:
+  bdweb-static:
     build:
       context: .
       dockerfile: Dockerfile-dev
     volumes:
       - './:/usr/share/nginx/html'
     ports:
-      - "2500:80"
+      - "5200:80"
 
