@@ -25,7 +25,11 @@ pipeline {
         script {
           docker.withRegistry('', registryCredential) {
             dockerImage.push("${env.BUILD_NUMBER}")
-            dockerImage.push("latest")
+            if (env.BRANCH_NAME == 'master') {
+              dockerImage.push("latest")
+            } else if (env.BRANCH_NAME == 'develop') {
+              dockerImage.push("dev")
+            }
           }
         }
         sh "docker rmi $registry:$BUILD_NUMBER"
