@@ -10,13 +10,13 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        git 'https://github.com/buildarium/bdweb-static.git'
+        checkout scm
       }
     }
     stage('Build') {
       steps {
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry
         }
       }
     }
@@ -24,7 +24,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry('', registryCredential) {
-            dockerImage.push()
+            dockerImage.push("${env.BUILD_NUMBER}")
+            dockerImage.push("latest")
           }
         }
         sh "docker rmi $registry:$BUILD_NUMBER"
