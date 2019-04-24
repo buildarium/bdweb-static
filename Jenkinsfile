@@ -2,6 +2,7 @@ pipeline {
   environment {
     registry = "buildarium/bdweb-static"
     registryCredential = 'dockerhub'
+    dockerImage = ''
   }
 
   agent any
@@ -15,7 +16,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
