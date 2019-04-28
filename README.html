@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>bdweb-static</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="bdweb-static">bdweb-static</h1>
+<blockquote>
+<p>Buildarium Static Splash Site</p>
+</blockquote>
+<p><img src="https://img.shields.io/github/tag/buildarium/bdweb-static.svg" alt="Version">
+<a href="http://build.bucktower.net:8080/job/buildarium/job/bdweb-static/job/develop/"><img src="http://build.bucktower.net:8080/buildStatus/icon?job=buildarium%bdweb-static%2Fdevelop" alt="Build Status"></a>
+<a href="https://status.buildarium.com"><img src="https://img.shields.io/uptimerobot/ratio/m782541054-96ab7742cc0f6c22b1b20bf6.svg" alt="Uptime Robot ratio (30 days)"></a></p>
+<p><a href="https://buildarium.slack.com/app_redirect?channel=bdweb"><img src="https://img.shields.io/badge/chat-on%20slack-%233D133D.svg?longCache=true" alt="Slack Channel"></a>
+<img src="https://img.shields.io/maintenance/yes/2019.svg" alt="Maintenance"></p>
+<p><img src="https://i.imgur.com/IjCNEBU.png" alt="Screenshot"></p>
+<hr>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#bdweb-static">bdweb-static</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#clone">Clone</a></li>
+<li><a href="#setup">Setup</a>
+<ul>
+<li><a href="#helpful-commands">Helpful Commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#features">Features</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#tests">Tests</a>
+<ul>
+<li><a href="#running-unit-tests">Running unit tests</a></li>
+<li><a href="#linting">Linting</a></li>
+</ul>
+</li>
+<li><a href="#contributing">Contributing</a>
+<ul>
+<li><a href="#step-1">Step 1</a></li>
+<li><a href="#step-2">Step 2</a></li>
+<li><a href="#step-3">Step 3</a></li>
+</ul>
+</li>
+<li><a href="#deployment">Deployment</a>
+<ul>
+<li><a href="#development-ecosystem">Development Ecosystem</a></li>
+<li><a href="#testing-ecosystem">Testing Ecosystem</a></li>
+<li><a href="#production-ecosystem">Production Ecosystem</a></li>
+</ul>
+</li>
+<li><a href="#team">Team</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#support">Support</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="installation">Installation</h2>
+<h3 id="clone">Clone</h3>
+<ul>
+<li>Clone this repo to your local machine using <code>git@github.com:buildarium/bdweb-app.git</code></li>
+</ul>
+<h3 id="setup">Setup</h3>
+<p><a href="https://docs.docker.com/install/">Install Docker</a></p>
+<h4 id="helpful-commands">Helpful Commands</h4>
+<p>From here, you probably want to check out a branch other than <code>master</code>:</p>
+<blockquote>
+<p>View branches on the remote</p>
+</blockquote>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> git branch -v -a</span>
+</div></code></pre>
+<blockquote>
+<p>Checkout a branch (will copy to local if only on remote)</p>
+</blockquote>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> git checkout [BRANCH]</span>
+</div></code></pre>
+<hr>
+<h2 id="features">Features</h2>
+<ul>
+<li>Static sites can load a lot faster than SPAs</li>
+<li>Hopefully SEO optimized at some point (also an issue of SPAs)</li>
+<li>Provide single place for splash for Buildarium</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>Harnessing <a href="http://getskeleton.com">Skeleton</a> for base CSS styles, which are then expounded upon a lot in <code>styles/main.css</code>.</p>
+<ul>
+<li><code>index.html</code>: Homepage</li>
+<li><code>about.html</code>: About page</li>
+<li><code>styles/</code>
+<ul>
+<li><code>main.css</code>: Most custom CSS</li>
+<li><code>normalize.css</code>: Skeleton</li>
+<li><code>skeleton.css</code>: Also Skeleton</li>
+<li><code>stars.css</code>: The flowy background of stars scrolling
+<ul>
+<li>It's effectively a parllax effect with 3 generated images</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tests">Tests</h2>
+<h3 id="running-unit-tests">Running unit tests</h3>
+<p><em>WIP</em></p>
+<!-- > Execute the unit tests via [Karma](https://karma-runner.github.io)
+
+```shell
+$ make test
+``` -->
+<h3 id="linting">Linting</h3>
+<p><em>WIP</em></p>
+<!-- > Run linting tools as per the [Angular Style Guide](https://angular.io/guide/styleguide)
+
+```shell
+$ make lint
+``` -->
+<hr>
+<h2 id="contributing">Contributing</h2>
+<blockquote>
+<p>To get started...</p>
+</blockquote>
+<p>Use the <a href="https://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a> branching model and <a href="https://semver.org/">SemVer</a> for versioning.</p>
+<h3 id="step-1">Step 1</h3>
+<ul>
+<li>
+<p>👯 Clone this repo to your local machine</p>
+</li>
+<li>
+<p>🔎 Ensure sure you have a local copy of the <code>develop</code> branch</p>
+</li>
+</ul>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> git branch -a</span>
+* master
+  remotes/origin/HEAD
+  remotes/origin/master
+  remotes/origin/develop
+  ...
+<span class="hljs-meta">$</span><span class="bash"> git checkout develop</span>
+Branch develop set up to track remote branch experimental from origin.
+Switched to a new branch 'develop'
+<span class="hljs-meta">$</span><span class="bash"> git branch</span>
+* develop
+  master
+</div></code></pre>
+<ul>
+<li>🌱 Create a feature branch off the <code>develop</code> branch</li>
+</ul>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> git checkout -b myfeature develop</span>
+Switched to a new branch "myfeature"
+</div></code></pre>
+<h3 id="step-2">Step 2</h3>
+<ul>
+<li><strong>HACK AWAY!</strong> 🔨🔨🔨</li>
+<li>📦 Deployments are automatic to the  <a href="#deployment">Testing Ecosystem</a> whenever a commit is pushed</li>
+</ul>
+<h3 id="step-3">Step 3</h3>
+<ul>
+<li>🏷 Decide the proper version number as per <a href="https://semver.org/">SemVer</a> and edit <code>package.json</code>
+<ul>
+<li>Given a version number <code>MAJOR.MINOR.PATCH</code>, increment the:
+<ul>
+<li><code>MAJOR</code> version when you make incompatible API changes</li>
+<li><code>MINOR</code> version when you add functionality in a backwards-compatible manner, and</li>
+<li><code>PATCH</code> version when you make backwards-compatible bug fixes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>package.json</code>:</p>
+<pre><code class="language-json"><div>{
+  ...
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"MAJOR.MINOR.PATCH"</span>,
+  ...
+}
+</div></code></pre>
+<ul>
+<li>👨‍🍳 Prepare the <code>develop</code> branch to be merged into and ensure it's up-to-date</li>
+</ul>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> git checkout develop</span>
+Switched to branch 'develop'
+<span class="hljs-meta">$</span><span class="bash"> git pull</span>
+</div></code></pre>
+<ul>
+<li>🔀 Merge your feature branch into <code>develop</code></li>
+</ul>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> git merge --no-ff myfeature</span>
+Updating ea1b82a..05e9557
+(Summary of changes)
+<span class="hljs-meta">$</span><span class="bash"> git branch -d myfeature</span>
+Deleted branch myfeature (was 05e9557).
+<span class="hljs-meta">$</span><span class="bash"> git push origin develop</span>
+</div></code></pre>
+<blockquote>
+<p><em>The <code>--no-ff</code> flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature</em></p>
+</blockquote>
+<h2 id="deployment">Deployment</h2>
+<h3 id="development-ecosystem">Development Ecosystem</h3>
+<p>When developing locally, simply use:</p>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> docker-compose up</span>
+</div></code></pre>
+<p>This will start build all necessary Docker images and start up any Docker container(s) necessary to run.</p>
+<p><strong>Additionally, <code>docker-compose.yml</code> will automatically expose local ports for testing, and will mount the local code into the Docker container for hot reloads.</strong></p>
+<p><em>All you need to do is write code and test (hot reloading is enabled). You can view the running container at <code>http://localhost:5200</code>.</em></p>
+<h3 id="testing-ecosystem">Testing Ecosystem</h3>
+<p>Commits submitted to the <code>develop</code> branch will automatically be built into a Docker image and pushed to the Docker container registry.</p>
+<p>From there, we have a Digital Ocean droplet running <a href="https://github.com/v2tec/watchtower">Watchtower</a>, which will automatically pull new images from the Docker container registry and swap them out.</p>
+<p>To ensure successful deployment to the Testing Ecosystem:</p>
+<ul>
+<li>Ensure the Dockerfile still builds a usable image</li>
+</ul>
+<p><em>You can view the running container at <code>http://test.buildarium.com</code>.</em></p>
+<!-- ### Staging Ecosystem
+
+Deployment to Staging is triggered manually with containers built from the  `release-*` branch.
+
+To prepare for the Staging Ecosystem, it is a good idea to:
+
+- All unit, integration, and e2e tests are passing
+- Ensure new features are properly covered by appropriate tests
+- Provide proper documentation for new features in the official docs
+- Ensure new code abides by the style guide -->
+<h3 id="production-ecosystem">Production Ecosystem</h3>
+<p>Deployment to Production is triggered manually from the container registered from the <code>master</code> branch upon proper QA testing and when the time is right.</p>
+<p>Don't fuck up.</p>
+<hr>
+<h2 id="team">Team</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="https://bucktower.net"><strong>Buck Tower</strong></a></th>
+<th style="text-align:center"><a href="https://github.com/wlodawskymichael"><strong>Michael Wlodawsky</strong></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://bucktower.net"><img src="https://avatars1.githubusercontent.com/u/1170938?v=3&amp;s=200" alt="Buck Tower"></a></td>
+<td style="text-align:center"><a href="https://github.com/wlodawskymichael"><img src="https://avatars1.githubusercontent.com/u/27742630?v=3&amp;s=200" alt="Michael Wlodawsky"></a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://github.com/bucktower"><code>github.com/bucktower</code></a></td>
+<td style="text-align:center"><a href="https://github.com/wlodawskymichael"><code>github.com/wlodawskymichael</code></a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="faq">FAQ</h2>
+<ul>
+<li><strong>How do I do <em>specifically</em> so and so placeholder?</strong>
+<ul>
+<li>No problem! Just do this.</li>
+</ul>
+</li>
+</ul>
+<h2 id="support">Support</h2>
+<p>Reach out at one of the following places!</p>
+<ul>
+<li>Join the Slack channel <a href="https://buildarium.slack.com/app_redirect?channel=bdweb"><code>#bdweb</code></a></li>
+<li>Email <a href="mailto:buck@buildarium.com"><code>buck@buildarium.com</code></a></li>
+</ul>
+<hr>
+<h2 id="license">License</h2>
+<ul>
+<li><strong><a href="https://choosealicense.com/licenses/mit/">MIT</a></strong></li>
+<li>Copyright 2019 © <a href="https://buildarium.com">Buildarium</a>.</li>
+</ul>
+
+    </body>
+    </html>

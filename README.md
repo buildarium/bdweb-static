@@ -2,14 +2,12 @@
 
 > Buildarium Static Splash Site
 
-![Version](https://img.shields.io/badge/version-1.0.1-black.svg?longCache=true&style=flat-square)
-[![Docker Cloud](https://img.shields.io/docker/cloud/build/buildarium/bdweb-static.svg)](https://cloud.docker.com/u/buildarium/repository/docker/buildarium/bdweb-static)
-<!-- [![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m781258374-4099c727e3e333d16b40f870.svg?style=flat-square)](https://status.indie.casa) -->
-<!-- [![Deployment](https://img.shields.io/badge/deployment-gcloud-1B9CE2.svg?longCache=true&style=flat-square)](http://cloud.google.com/) -->
+![Version](https://img.shields.io/github/tag/buildarium/bdweb-static.svg)
+[![Build Status](http://build.bucktower.net:8080/buildStatus/icon?job=buildarium%bdweb-static%2Fdevelop)](http://build.bucktower.net:8080/job/buildarium/job/bdweb-static/job/develop/)
+[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m782541054-96ab7742cc0f6c22b1b20bf6.svg)](https://status.buildarium.com)
 
-[![Slack Channel](https://img.shields.io/badge/chat-on%20slack-%233D133D.svg?longCache=true&style=flat-square)](https://buildarium.slack.com/app_redirect?channel=bdweb)
-[![Email](https://img.shields.io/badge/email-buck-blue.svg?longCache=true&style=flat-square)](mailto:buck@buildarium.com)
-![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)
+[![Slack Channel](https://img.shields.io/badge/chat-on%20slack-%233D133D.svg?longCache=true)](https://buildarium.slack.com/app_redirect?channel=bdweb)
+![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)
 
 ![Screenshot](https://i.imgur.com/IjCNEBU.png)
 
@@ -35,7 +33,6 @@
   - [Deployment](#deployment)
     - [Development Ecosystem](#development-ecosystem)
     - [Testing Ecosystem](#testing-ecosystem)
-    - [Staging Ecosystem](#staging-ecosystem)
     - [Production Ecosystem](#production-ecosystem)
   - [Team](#team)
   - [FAQ](#faq)
@@ -74,13 +71,22 @@ $ git checkout [BRANCH]
 
 ## Features
 
-- Hopefully SEO optimized
+- Static sites can load a lot faster than SPAs
+- Hopefully SEO optimized at some point (also an issue of SPAs)
 - Provide single place for splash for Buildarium
 
 ## Documentation
 
-*WIP*
-<!-- Found [here](https://icapi-network-dot-indiecasa-core.appspot.com/docs) -->
+Harnessing [Skeleton](http://getskeleton.com) for base CSS styles, which are then expounded upon a lot in `styles/main.css`.
+
+- `index.html`: Homepage
+- `about.html`: About page
+- `styles/`
+  - `main.css`: Most custom CSS
+  - `normalize.css`: Skeleton
+  - `skeleton.css`: Also Skeleton
+  - `stars.css`: The flowy background of stars scrolling
+    - It's effectively a parllax effect with 3 generated images
 
 ## Tests
 
@@ -210,7 +216,7 @@ To ensure successful deployment to the Testing Ecosystem:
 
 *You can view the running container at `http://test.buildarium.com`.*
 
-### Staging Ecosystem
+<!-- ### Staging Ecosystem
 
 Deployment to Staging is triggered manually with containers built from the  `release-*` branch.
 
@@ -219,7 +225,7 @@ To prepare for the Staging Ecosystem, it is a good idea to:
 - All unit, integration, and e2e tests are passing
 - Ensure new features are properly covered by appropriate tests
 - Provide proper documentation for new features in the official docs
-- Ensure new code abides by the style guide
+- Ensure new code abides by the style guide -->
 
 ### Production Ecosystem
 
@@ -247,7 +253,7 @@ Don't fuck up.
 
 Reach out at one of the following places!
 
-- Join the Slack channel [`#bdapi`](https://buildarium.slack.com/app_redirect?channel=bdapi)
+- Join the Slack channel [`#bdweb`](https://buildarium.slack.com/app_redirect?channel=bdweb)
 - Email [`buck@buildarium.com`](mailto:buck@buildarium.com)
 
 ---
